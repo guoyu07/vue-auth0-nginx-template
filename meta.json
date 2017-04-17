@@ -1,0 +1,81 @@
+{
+    "prompts": {
+        "name": {
+            "type": "string",
+            "required": true,
+            "label": "Project name"
+        },
+        "author": {
+            "type": "string",
+            "label": "Author"
+        },
+        "description": {
+            "type": "string",
+            "required": true,
+            "label": "Project description",
+            "default": "A Vue.js project that works with auth0-nginx"
+        },
+        "version": {
+            "type": "string",
+            "required": true,
+            "label": "Version of project",
+            "default": "0.1.0"
+        },
+        "auth_key": {
+            "type": "string",
+            "required": true,
+            "label": "Key used in sessionStorage",
+            "default": "auth"
+        },
+        "api_url": {
+            "type": "string",
+            "required": true,
+            "label": "URL of the nginx-auth0 proxy",
+            "default": "http://localhost:8080"
+        },
+        "audience": {
+            "type": "string",
+            "required": true,
+            "label": "Your API's Id",
+            "default": "https://auth0.com"
+        },
+        "redirect": {
+            "type": "string",
+            "required": true,
+            "label": "Path/URL redirection after login",
+            "default": "restricted"
+        },
+        "refresh_token": {
+            "type": "confirm",
+            "message": "Include refresh token?"
+        },
+        "history_mode": {
+            "type": "confirm",
+            "message": "Use HTML5 History mode?"
+        },
+        "style": {
+            "type": "list",
+            "message": "Styling to use",
+            "choices": [
+                {
+                    "name": "Bootstrap 3",
+                    "value": "bootstrap3",
+                    "short": "bootstrap3"
+                },
+                {
+                    "name": "Custom",
+                    "value": "custom",
+                    "short": "custom"
+                }
+            ]
+        },
+        "custom_styleilename": {
+            "when": "style==='custom'",
+            "type": "string",
+            "required": true,
+            "label": "Custom style filename",
+            "default": "build.css"
+        }
+    },
+    "completeMessage": "First:\n\n  cd {{destDirName}}\n  npm install\n\nTo develop:\n\n  npm run dev\n\nTo deploy:\n\n  npm run build\n  npm run serve"
+}
